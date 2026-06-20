@@ -1,0 +1,22 @@
+replicaCount: 3
+
+image:
+  repository: nginxdemos/hello
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+  limits:
+    cpu: 200m
+    memory: 256Mi
+
+ingress:
+  enabled: true
+  host: user-service.local
