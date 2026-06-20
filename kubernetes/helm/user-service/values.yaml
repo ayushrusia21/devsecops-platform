@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: nginxdemos/hello
+  repository: ayushrusia21/devsecops-platform-user-service
   tag: latest
 
 service:
