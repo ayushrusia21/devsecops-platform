@@ -31,3 +31,6 @@ coverage/
 # Python
 __pycache__/
 *.pyc
+
+HashiCorp Vault:
+docs/vault-init.txt
