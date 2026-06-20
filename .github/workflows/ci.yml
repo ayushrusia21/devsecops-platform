@@ -35,3 +35,21 @@ jobs:
           docker build \
           -t user-service:${{ github.sha }} \
           applications/user-service
+
+  trivy-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Image
+        run: |
+          docker build \
+          -t user-service:${{ github.sha }} \
+          applications/user-service
+
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: user-service:${{ github.sha }}
+          format: table
