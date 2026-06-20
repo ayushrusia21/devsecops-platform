@@ -1,0 +1,10 @@
+promtail:
+  image:
+    repository: grafana/promtail
+    tag: 2.9.8
+
+loki:
+  enabled: true
+
+grafana:
+  enabled: false

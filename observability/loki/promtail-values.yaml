@@ -1,0 +1,20 @@
+config:
+  snippets:
+    scrapeConfigs: |
+      - job_name: kubernetes-pods-dev
+        kubernetes_sd_configs:
+          - role: pod
+
+        relabel_configs:
+          - source_labels:
+              - __meta_kubernetes_namespace
+            regex: dev
+            action: keep
+
+          - action: replace
+            source_labels:
+              - __meta_kubernetes_pod_uid
+              - __meta_kubernetes_pod_container_name
+            separator: /
+            replacement: /var/log/pods/*$1/*.log
+            target_label: __path__
