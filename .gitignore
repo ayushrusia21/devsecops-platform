@@ -1,0 +1,33 @@
+# Mac
+.DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+# Kubernetes
+kubeconfig
+
+# Logs
+*.log
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets
+.env
+.env.*
+secrets.yaml
+
+# Coverage
+coverage/
+
+# Python
+__pycache__/
+*.pyc
